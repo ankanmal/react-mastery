@@ -73,3 +73,52 @@ Here is an example of how you might use the crossorigin attribute in a script ta
 This would load the script located at "https://example.com/script.js" using a "cors" request, and the server would not include any credentials in the request.
 
 The crossorigin attribute is useful for loading scripts from third-party domains, as it allows you to control how the browser handles any security issues that may arise from this. It is particularly useful for loading scripts from a CDN (Content Delivery Network), as it allows you to take advantage of the performance and reliability benefits of a CDN without introducing any security risks.
+
+### What is diference between React and ReactDOM
+
+React is a JavaScript library for building user interfaces. It is designed to be efficient, declarative, and flexible, and is particularly well-suited for building reusable, modular components that can be easily composed to build complex user interfaces.
+
+ReactDOM is a separate library that provides specific methods for rendering React components to the DOM (Document Object Model). The DOM is a tree-like structure that represents the structure and content of a web page, and is used by web browsers to render web pages to the screen.
+
+ReactDOM provides a number of methods for rendering React components to the DOM, including render, hydrate, and unmountComponentAtNode. It also provides a number of utility methods for interacting with the DOM, such as findDOMNode and createPortal.
+
+In general, React is used to define the structure and behavior of user interface components, while ReactDOM is used to render those components to the DOM and manage their interactions with the DOM.
+
+For example, you might use React to define a component that represents a button, and use ReactDOM to render that button to the DOM and attach event listeners to it.
+
+Here is an example of how you might use React and ReactDOM together to render a button component to the DOM:
+
+```
+import React from "react";
+import ReactDOM from "react-dom";
+
+// Define a button component using React
+const Button = () => (
+  <button onClick={() => console.log("Button clicked")}>Click me</button>
+);
+
+// Render the button component to the DOM using ReactDOM
+ReactDOM.render(<Button />, document.getElementById("root"));
+
+
+```
+
+This code defines a button component using React, and then renders it to the DOM using ReactDOM. When the button is clicked, it will log a message to the console.
+
+In summary, React and ReactDOM are two separate libraries that are often used together to build user interfaces for web applications. React is used to define the structure and behavior of user interface components, while ReactDOM is used to render those components to the DOM and manage their interactions with the DOM.
+
+### What is difference between react.development.js and react.production.js files via CDN?
+
+The react.development.js and react.production.js files are versions of the React library that are optimized for different environments.
+
+The react.development.js file is intended for use in development environments, and is optimized for debugging and testing purposes. It includes extra checks and warnings to help identify potential issues in your code, and is generally larger in size than the production version.
+
+The react.production.js file, on the other hand, is intended for use in production environments, and is optimized for performance and size. It includes fewer checks and warnings, and is generally smaller in size than the development version.
+
+### What is async and defer?
+
+The async and defer attributes are optional attributes that can be used in the script tag to control the loading and execution of external JavaScript files in web pages.
+
+The async attribute tells the browser to load and execute the script asynchronously, which means that the script will be loaded in the background while the page continues to load. This can improve the performance of the page by allowing the browser to load and execute the script in parallel with other resources.
+
+The defer attribute tells the browser to load the script, but to defer its execution until the page has finished loading. This can be useful if you want to make sure that the script is not executed until the rest of the page has finished loading, or if you want to ensure that the script is executed in a particular order.
