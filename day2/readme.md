@@ -17,3 +17,11 @@ We need bundlers bacause of some of the following reasons below:
 ombine multiple JavaScript files into a single file, or "bundle", to reduce the number of requests the browser has to make to the server. This can improve the performance of your application by reducing the amount of time it takes to load.
 Transform and optimize code to make it more efficient and compatible with different environments. For example, a bundler might transpile modern JavaScript code to be compatible with older browsers, or minify the code to reduce its size.
 Manage dependencies between different parts of your codebase. A bundler can help you include the right versions of your dependencies and ensure that everything is properly linked together.
+
+### What is `.parcel-cache`
+
+Parcel cache is the directory use by parcel bundler to store cached files. When we build projects using parcel it save various intermediate files to the parcel cache directory in order to speed up the build process.
+
+If you want to clear cache for any reason we need to delete the cache files and again start the build process.
+
+In most cases the folder is hidden by deafault and we need to use some options to view it.
