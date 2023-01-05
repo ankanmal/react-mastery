@@ -47,3 +47,45 @@ Tree Shaking is used in the context of Javascript code optimization.It is used t
 For example we imported certain packages and it contains different functions and we are using only two function so in the time of production or development build the not required code in the package will be removed.
 
 It is typically used to reduce the size of the codebase and improve the performance of the application.
+
+### What is Hot Module Replacement?
+
+Hot Module Replacement (HMR) is a feature that allows us to update parts of our application "on the fly" while the application is running, without having to reload the entire page. This can be a very useful tool for improving the development experience, as it allows us to see our changes in real time and iterate more quickly.
+
+To use HMR, we will need to use a bundler that supports it, such as Webpack or Parcel.
+
+And HMR is generally used in the development and typically not on the production enviroment.
+
+### List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words
+
+- Minification
+- Tree Shaking
+- Hot module Replacement
+- Image Optimization
+- File Watcher
+
+- Minification : Parcel have minifiers for javascript, html, css and svg out of the box. It reduces the output size of the file by removing whitespaces,renaming variables to shorter names, and many other optimization.
+
+- Image Optimization : It support resizing, converting and optimizing images. We have to specify which format and size the image should be converted and it also support multiple sizes for different devices.
+
+- File Watcher : To support an optimal caching and development experience Parcel utilizes a very fast watcher written in C++ that integrates with low-level file watching functionality of each operating system. Using this watcher Parcel watches every file in your project root (including all node_modules). Based on events and metadata from these files, Parcel determines which files need to be rebuilt.
+
+### What is `.gitignore`? What should we add and not add into it?
+
+.gitignore is a file that tells git which file or directories should be ignored while we commit our code.
+
+We should add files that can again made in the production server for exmaple the nodemodules folder we should include in the git ignore bcause pakage.lock.json have all the information of the packages that we are using.
+
+We should not add files that we cannot make it in the production server.
+
+### What is the difference between `package.json` and `package-lock.json`
+
+package.json is a file that is used to manage the dependencies of a Node.js project. It includes information about the project, such as the name, version, and dependencies, as well as scripts that can be used to build or test the project.
+
+package-lock.json, on the other hand, is a file that is used to lock the dependencies of a project to specific versions. It is generated automatically by npm when you install packages, and it records the exact versions of the packages that are installed, as well as the versions of their dependencies.
+
+### Why should I not modify `package-lock.json`?
+
+package-lock.json is used to lock the dependencies of a project to specific versions, and it is generated automatically by npm when we install packages. It records the exact versions of the packages that are installed, as well as the versions of their dependencies.
+
+If we moidify the package-lock.json than we may end up with a file that does not accurately reflect the state of our project dependencies.It will cause error when we try to install or update package, and if somebody pull our code from github and build it at that it will throw errors or it will not run properly.
