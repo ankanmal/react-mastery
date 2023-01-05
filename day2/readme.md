@@ -89,3 +89,18 @@ package-lock.json, on the other hand, is a file that is used to lock the depende
 package-lock.json is used to lock the dependencies of a project to specific versions, and it is generated automatically by npm when we install packages. It records the exact versions of the packages that are installed, as well as the versions of their dependencies.
 
 If we moidify the package-lock.json than we may end up with a file that does not accurately reflect the state of our project dependencies.It will cause error when we try to install or update package, and if somebody pull our code from github and build it at that it will throw errors or it will not run properly.
+
+### What is `node_modules` ? Is it a good idea to push that on git?
+
+node_modules is a directory that is used to store the dependencies of a Node.js project. When we install packages using npm, the packages and their dependencies are downloaded and stored in the node_modules directory.
+
+No it is not a good idea to push the node modules folder to the git because we have package.json and package-lock.json which have the exact details of the packages we are using and anybody with the code and the package files can download their own nodemodules in their own device and server can also build the nodemodules folder using the package files.
+
+### What is the `dist` folder?
+
+The dist folder (short for "distribution") is a directory that is used to store the files that are ready to be deployed or distributed. It typically contains the final, built version of an application or library, and is the result of the build process.
+
+### What is `browserlists`
+
+browserslist is a configuration file that is used to specify the target browsers for a project. It is typically used by tools like Babel, Autoprefixer, and other tools that need to know which browsers to support or optimize for.
+With having the browser list any transplier will optimize the code to run in the given version of browsers.
