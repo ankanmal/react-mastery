@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const title = React.createElement("div", { className: "title" }, [
-  React.createElement("h1", { key: "h1" }, "Hello from Header 1"),
-  React.createElement("h2", { key: "h2" }, "This is header 2"),
-  React.createElement("h3", { key: "h3" }, "Hello form header 3"),
-]);
-console.log(title);
+//creating three nested h1 inside div using jsx
+const titleJSX = (
+  <div className="title">
+    <h1 key="h1">Hi from header 1</h1>
+    <h2 key="h2">Hola from header 2</h2>
+    <h3 key="h3">Hey it is Header 3</h3>
+  </div>
+);
+console.log(titleJSX);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(title);
+root.render(titleJSX);
