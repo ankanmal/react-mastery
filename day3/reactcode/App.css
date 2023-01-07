@@ -19,17 +19,20 @@ img {
   margin: 10px;
 }
 input {
-  padding: 10px 200px;
+  padding: 10px 200px 10px 20px;
   margin: 10px 150px;
   border-radius: 5px;
   border-style: none;
-  background: rgb(63, 237, 251);
+  background: rgb(238, 174, 202);
   background: radial-gradient(
     circle,
-    rgba(63, 237, 251, 0.9080766095500701) 0%,
-    rgba(252, 70, 107, 1) 100%
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
   );
   color: black;
+}
+input#search {
+  width: 400px;
 }
 svg {
   margin-top: 10px;
