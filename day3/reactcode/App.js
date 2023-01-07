@@ -1,38 +1,43 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./App.css";
 
-//creating three nested h1 inside div using jsx but this is Functional Component
-//Passing attribute inside jsx because with the use of {} in tag we can pass any valid javascript inside that.
-// Now we will create one more component and pass that inside the TitleFunction component.
+//Creating a Header Component From Scratch using Functional Component with JSX
 
-const name = "Ankan";
-
-const TitleFunction = () => {
+const Header = () => {
   return (
-    <div className="title">
-      <h1 key="h1">Hi I am, {name} </h1>
-      <h2 key="h2">Hola from header 2</h2>
-      <h3 key="h3">Hey it is Header 3</h3>
-
-      <Paragraph />
+    <div className="main">
+      <img
+        src="https://dz8fbjd9gwp2s.cloudfront.net/logos/6389e494e4b0a2e361db7362.png?v=6"
+        alt="Logo"
+      />
+      <input
+        type="text"
+        name="searchbar"
+        id="search"
+        placeholder="Write Something"
+      />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="50"
+        height="50"
+        viewBox="0 0 30 30"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="feather feather-users"
+      >
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </svg>
     </div>
   );
 };
 
-const Paragraph = () => {
-  return (
-    <div key="Pdiv">
-      <h1 key="ph1">Lorem Ipsum Come under this </h1>
-      <p key="Ppara">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic voluptate
-        eligendi possimus deleniti eius necessitatibus, iusto recusandae
-        laudantium animi quia!
-      </p>
-    </div>
-  );
-};
-
-console.log(TitleFunction);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<TitleFunction />);
+root.render(<Header />);

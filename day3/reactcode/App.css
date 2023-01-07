@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  justify-content: space-around;
+
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(121, 9, 49, 0.9584967776172969) 21%,
+    rgba(0, 255, 179, 0.8828665255164566) 100%
+  );
+}
+body {
+  margin: 0px;
+}
+
+img {
+  height: 40px;
+  margin: 10px;
+}
+input {
+  padding: 10px 200px;
+  margin: 10px 150px;
+  border-radius: 5px;
+  border-style: none;
+  background: rgb(63, 237, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 237, 251, 0.9080766095500701) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  color: black;
+}
+svg {
+  margin-top: 10px;
+}
