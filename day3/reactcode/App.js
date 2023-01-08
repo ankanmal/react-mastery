@@ -1853,29 +1853,35 @@ const restaurantList = [
 const Body = () => {
   return (
     <div className="res-body">
-      <RestaurantCard res={restaurantList[0].data} />
+      {/* <RestaurantCard res={restaurantList[0].data} />
       <RestaurantCard res={restaurantList[1].data} />
       <RestaurantCard res={restaurantList[2].data} />
       <RestaurantCard res={restaurantList[3].data} />
-      <RestaurantCard res={restaurantList[4].data} />
+      <RestaurantCard res={restaurantList[4].data} /> */}
+      {/* Now Mapping the data to the restaurant list component */}
+      {restaurantList.map((restaurant) => (
+        <RestaurantCard res={restaurant.data} key={restaurant.data.uuid} />
+      ))}
     </div>
   );
 };
 
-const RestaurantCard = (props) => {
+const RestaurantCard = ({ res }) => {
+  //object destructuring of the res array data into its individual values
+  const { name, cloudinaryImageId, cuisines, lastMileTravelString } = res;
   return (
     <div className="card-res">
       <img
         src={
           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          props.res.cloudinaryImageId
+          cloudinaryImageId
         }
         alt="restaurantlogo"
         className="res-img"
       />
-      <h2>{props.res.name}</h2>
-      <h3>{props.res.cuisines.join(", ")}</h3>
-      <h4>{props.res.lastMileTravelString}</h4>
+      <h2>{name}</h2>
+      <h3>{cuisines.join(", ")}</h3>
+      <h4>{lastMileTravelString}</h4>
     </div>
   );
 };
