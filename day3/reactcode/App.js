@@ -33,7 +33,8 @@ const Navbar = () => {
     </div>
   );
 };
-const restaurant = [
+
+const restaurantList = [
   {
     type: "restaurant",
     data: {
@@ -1852,29 +1853,29 @@ const restaurant = [
 const Body = () => {
   return (
     <div className="res-body">
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
+      <RestaurantCard res={restaurantList[0].data} />
+      <RestaurantCard res={restaurantList[1].data} />
+      <RestaurantCard res={restaurantList[2].data} />
+      <RestaurantCard res={restaurantList[3].data} />
+      <RestaurantCard res={restaurantList[4].data} />
     </div>
   );
 };
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
   return (
     <div className="card-res">
       <img
         src={
           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          restaurant[0].data.cloudinaryImageId
+          props.res.cloudinaryImageId
         }
         alt="restaurantlogo"
         className="res-img"
       />
-      <h2>{restaurant[0].data.name}</h2>
-      <h3>{restaurant[0].data.cuisines}</h3>
-      <h4>{restaurant[0].data.lastMileTravelString}</h4>
+      <h2>{props.res.name}</h2>
+      <h3>{props.res.cuisines.join(", ")}</h3>
+      <h4>{props.res.lastMileTravelString}</h4>
     </div>
   );
 };
