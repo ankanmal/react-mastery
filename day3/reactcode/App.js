@@ -1858,17 +1858,23 @@ const Body = () => {
       <RestaurantCard res={restaurantList[2].data} />
       <RestaurantCard res={restaurantList[3].data} />
       <RestaurantCard res={restaurantList[4].data} /> */}
-      {/* Now Mapping the data to the restaurant list component */}
+      {/* Now Mapping the data to the restaurant list component 
+      Using the Spread Operator*/}
       {restaurantList.map((restaurant) => (
-        <RestaurantCard res={restaurant.data} key={restaurant.data.uuid} />
+        <RestaurantCard {...restaurant.data} key={restaurant.data.uuid} />
       ))}
     </div>
   );
 };
-
-const RestaurantCard = ({ res }) => {
+//using spread operator to destructure the array on fly
+const RestaurantCard = ({
+  name,
+  cloudinaryImageId,
+  cuisines,
+  lastMileTravelString,
+}) => {
   //object destructuring of the res array data into its individual values
-  const { name, cloudinaryImageId, cuisines, lastMileTravelString } = res;
+  // const { name, cloudinaryImageId, cuisines, lastMileTravelString } = res;
   return (
     <div className="card-res">
       <img
