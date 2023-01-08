@@ -1,43 +1,79 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./App.css";
+import logo from "./assets/logo1.jpg";
 
-//Creating a Header Component From Scratch using Functional Component with JSX
+//creating a food delivery service name food kingdom
 
-const Header = () => {
+// initial structure of the app
+/**
+ * Navbar
+ *      -logo (in the left)
+ *      -home, aboutus, cart (in the right)
+ * Body
+ *    -search bar
+ *    -restaurant card
+ *                - photo, name, cuisines,
+ *                  distance
+ * Footer
+ *       -copyrights
+ *       -Address
+ *
+ */
+
+const Navbar = () => {
   return (
-    <div className="main">
-      <img
-        src="https://dz8fbjd9gwp2s.cloudfront.net/logos/6389e494e4b0a2e361db7362.png?v=6"
-        alt="Logo"
-      />
-      <input
-        type="text"
-        name="searchbar"
-        id="search"
-        placeholder="Write Something"
-      />
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="50"
-        height="50"
-        viewBox="0 0 30 30"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="feather feather-users"
-      >
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-        <circle cx="9" cy="7" r="4"></circle>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-      </svg>
+    <div className="main-nav">
+      <img src={logo} alt="logo" className="logo" />
+      <ul>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Cart</li>
+      </ul>
     </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div className="res-body">
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+    </div>
+  );
+};
+
+const RestaurantCard = () => {
+  return (
+    <div className="card-res">
+      <img
+        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bdcd233971b7c81bf77e1fa4471280eb"
+        alt="restaurantlogo"
+        className="res-img"
+      />
+      <h2>KFC</h2>
+      <h3>American,Snacks,Biryani</h3>
+      <h4>1.5 km</h4>
+    </div>
+  );
+};
+
+const Footer = () => {
+  return <h4>Footer</h4>;
+};
+const Foodkingdom = () => {
+  return (
+    <>
+      <Navbar />
+      <Body />
+      <Footer />
+    </>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Header />);
+root.render(<Foodkingdom />);
