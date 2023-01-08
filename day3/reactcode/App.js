@@ -33,7 +33,12 @@ const Navbar = () => {
     </div>
   );
 };
-
+const restaurant = {
+  img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bdcd233971b7c81bf77e1fa4471280eb",
+  name: "KFC",
+  cuisine: "American,Snacks,Biryani",
+  distance: "1.5 km",
+};
 const Body = () => {
   return (
     <div className="res-body">
@@ -49,14 +54,10 @@ const Body = () => {
 const RestaurantCard = () => {
   return (
     <div className="card-res">
-      <img
-        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bdcd233971b7c81bf77e1fa4471280eb"
-        alt="restaurantlogo"
-        className="res-img"
-      />
-      <h2>KFC</h2>
-      <h3>American,Snacks,Biryani</h3>
-      <h4>1.5 km</h4>
+      <img src={restaurant.img} alt="restaurantlogo" className="res-img" />
+      <h2>{restaurant.name}</h2>
+      <h3>{restaurant.cuisine}</h3>
+      <h4>{restaurant.distance}</h4>
     </div>
   );
 };
