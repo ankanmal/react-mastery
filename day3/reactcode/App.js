@@ -1860,9 +1860,11 @@ const Body = () => {
       <RestaurantCard res={restaurantList[4].data} /> */}
       {/* Now Mapping the data to the restaurant list component 
       Using the Spread Operator*/}
-      {restaurantList.map((restaurant) => (
-        <RestaurantCard {...restaurant.data} key={restaurant.data.uuid} />
-      ))}
+      {restaurantList.map((restaurant) => {
+        return (
+          <RestaurantCard {...restaurant.data} key={restaurant.data.uuid} />
+        );
+      })}
     </div>
   );
 };
