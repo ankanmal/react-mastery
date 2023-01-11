@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./App.css";
-import logo from "./assets/logo1.jpg";
+import "../App.css";
+import logo from "../assets/logo1.jpg";
 
 //creating a food delivery service name food kingdom
 
