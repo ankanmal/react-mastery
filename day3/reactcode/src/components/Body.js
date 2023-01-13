@@ -16,7 +16,7 @@ const Body = () => {
       <div className="res-body">
         {findRestaurant.map((restaurant) => {
           return (
-            <RestaurantCard {...restaurant.data} key={restaurant.data.uuid} />
+            <RestaurantCard {...restaurant.data} key={restaurant.data?.uuid} />
           );
         })}
       </div>
