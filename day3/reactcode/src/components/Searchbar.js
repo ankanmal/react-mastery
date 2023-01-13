@@ -1,7 +1,16 @@
 import React, { useState } from "react";
+import { restaurantList } from "../config";
 
-const Searchbar = () => {
-  const [searchBar, setsearchBar] = useState();
+function searchRestaurant(searchBar, findRestaurant) {
+  const data1 = findRestaurant.filter((res) =>
+    res.data.name.includes(searchBar)
+  );
+  return data1;
+}
+
+const Searchbar = (props) => {
+  const [searchBar, setsearchBar] = useState("");
+  // const [findRestaurant, setfindRestaurant] = useState(restaurantList);
 
   const updateSearchbar = (set) => {
     setsearchBar(set);
@@ -17,7 +26,14 @@ const Searchbar = () => {
           updateSearchbar(e.target.value);
         }}
       />
-      <button>Search</button>
+      <button
+        onClick={() => {
+          const data = searchRestaurant(searchBar, props.findRestaurant);
+          props.setfindRestaurant(data);
+        }}
+      >
+        Search
+      </button>
     </div>
   );
 };
