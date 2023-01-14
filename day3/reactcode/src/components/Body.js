@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-
+import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
 
 import Searchbar from "./Searchbar";
@@ -23,7 +23,9 @@ const Body = () => {
     setfindRestaurant(jsondata?.data?.cards[2]?.data?.data?.cards);
   }
 
-  return (
+  return restaurantlist?.length === 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <Searchbar
         restaurantlist={restaurantlist}

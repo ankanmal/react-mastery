@@ -42,3 +42,28 @@ ul > li {
   display: flex;
   flex-wrap: wrap;
 }
+
+.shim {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.shimmer-photo {
+  background: #eef3f5;
+  width: 254px;
+  height: 160px;
+}
+
+.shimmer-heading {
+  background: #eef0f5;
+  height: 10px;
+  margin-top: 20px;
+  width: 134px;
+}
+.shimmer-price {
+  margin-top: 12px;
+  width: 94px;
+  background: #eef0f5;
+  height: 10px;
+}
