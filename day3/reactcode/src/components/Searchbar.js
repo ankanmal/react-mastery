@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { restaurantList } from "../config";
 
-function searchRestaurant(searchBar, findRestaurant) {
-  const data1 = findRestaurant.filter((res) =>
-    res.data.name.includes(searchBar)
+function searchRestaurant(searchBar, restaurantlist) {
+  const data1 = restaurantlist.filter((res) =>
+    res?.data?.name?.toLowerCase()?.includes(searchBar.toLowerCase())
   );
   return data1;
 }
@@ -28,7 +27,7 @@ const Searchbar = (props) => {
       />
       <button
         onClick={() => {
-          const data = searchRestaurant(searchBar, props.findRestaurant);
+          const data = searchRestaurant(searchBar, props.restaurantlist);
           props.setfindRestaurant(data);
         }}
       >
