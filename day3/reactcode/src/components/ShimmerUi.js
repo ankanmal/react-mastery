@@ -1,10 +1,17 @@
-import DummyShim from "./DummyShim";
-const Shimmer = ({ dummyShimData }) => {
+const Shimmer = () => {
   return (
     <div className="shim">
-      {dummyShimData.map((shim) => {
-        return <DummyShim key={shim} />;
-      })}
+      {Array(8)
+        .fill("")
+        .map((e, index) => {
+          return (
+            <div className="shim-comp" key={index}>
+              <div className="shimmer-photo"></div>
+              <div className="shimmer-heading"></div>
+              <div className="shimmer-price"></div>
+            </div>
+          );
+        })}
     </div>
   );
 };

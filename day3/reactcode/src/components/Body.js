@@ -7,18 +7,6 @@ import Searchbar from "./Searchbar";
 const Body = () => {
   const [findRestaurant, setfindRestaurant] = useState([]);
   const [restaurantlist, setRestaurantlist] = useState([]);
-  const dummyShimData = [
-    "121",
-    "122",
-    "123",
-    "124",
-    "125",
-    "126",
-    "127",
-    "128",
-    "129",
-    "1210",
-  ];
 
   // Now we will use the data from the swiggy public api. For that we need to use useEffect because we have to fetch the api on the initial render
   useEffect(() => {
@@ -36,7 +24,7 @@ const Body = () => {
   }
 
   return restaurantlist?.length === 0 ? (
-    <ShimmerUi dummyShimData={dummyShimData} />
+    <ShimmerUi />
   ) : (
     <>
       <Searchbar
