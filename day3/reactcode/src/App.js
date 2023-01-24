@@ -1,9 +1,11 @@
-import React from "react";
+import React, { Children } from "react";
 import ReactDOM from "react-dom/client";
 import "../App.css";
 import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import Body from "./components/Body";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import About from "./components/About";
 
 //creating a food delivery service name food kingdom
 
@@ -33,6 +35,17 @@ const Foodkingdom = () => {
   );
 };
 
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <Foodkingdom />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Foodkingdom />);
+root.render(<RouterProvider router={appRouter} />);
