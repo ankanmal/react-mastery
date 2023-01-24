@@ -1,13 +1,22 @@
 import { useState } from "react";
 import logo from "../../assets/logo1.jpg";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [isLogin, setIsLogin] = useState(false);
   return (
     <div className="main-nav">
       <img src={logo} alt="logo" className="logo" />
       <ul>
-        <li>Home</li>
-        <li>About Us</li>
+        <li>
+          <Link to="/"> Home</Link>
+        </li>
+        <li>
+          <Link to="/about"> About Us</Link>
+        </li>
+        <li>
+          <Link to="/contact"> Contact Us</Link>
+        </li>
         <li>Cart</li>
       </ul>
       {!isLogin ? (
