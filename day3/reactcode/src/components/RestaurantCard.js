@@ -1,4 +1,6 @@
 //using spread operator to destructure the array on fly
+import { IMG_URL } from "../config";
+
 const RestaurantCard = ({
   name,
   cloudinaryImageId,
@@ -10,10 +12,7 @@ const RestaurantCard = ({
   return (
     <div className="card-res">
       <img
-        src={
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          cloudinaryImageId
-        }
+        src={IMG_URL + cloudinaryImageId}
         alt="restaurantlogo"
         className="res-img"
       />

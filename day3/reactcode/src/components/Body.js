@@ -3,6 +3,7 @@ import ShimmerUi from "./ShimmerUi";
 import { useState, useEffect } from "react";
 
 import Searchbar from "./Searchbar";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [findRestaurant, setfindRestaurant] = useState([]);
@@ -37,10 +38,15 @@ const Body = () => {
         <div className="res-body">
           {findRestaurant.map((restaurant) => {
             return (
-              <RestaurantCard
-                {...restaurant?.data}
+              <Link
+                to={"/restaurant/" + restaurant?.data?.id}
                 key={restaurant?.data?.uuid}
-              />
+              >
+                <RestaurantCard
+                  {...restaurant?.data}
+                  key={restaurant?.data?.uuid}
+                />
+              </Link>
             );
           })}
         </div>
