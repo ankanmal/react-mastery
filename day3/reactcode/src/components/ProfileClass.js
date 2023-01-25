@@ -1,4 +1,5 @@
 import React from "react";
+import InsideProfile from "./InsideProfile";
 
 class Profile extends React.Component {
   //to use state varible we call constructor
@@ -15,16 +16,12 @@ class Profile extends React.Component {
   componentDidMount() {
     //here we are calling a set interval and it is not getting stopped after changing the page. To do that we have to remove the setInterval when we leave this page from componentwillunmount
     console.log("Component Did MOunt " + this.props.name);
-    this.timer = setInterval(() => {
-      console.log("React Op");
-    }, 1000);
   }
   componentDidUpdate() {
     console.log("component DID update");
   }
   componentWillUnmount() {
     console.log("Component Will Unmount Called");
-    clearInterval(this.timer);
   }
 
   render() {
@@ -32,8 +29,22 @@ class Profile extends React.Component {
     return (
       <div>
         <h1>Hello from Class Comp</h1>
+        <InsideProfile />
       </div>
     );
   }
 }
 export default Profile;
+
+/*
+        parent constructor
+        parent render
+            profile cosntructor
+            profile render
+            inside constructor
+            inside render
+            inside didMount
+            profile did MOunt
+        parent did mount
+
+*/
