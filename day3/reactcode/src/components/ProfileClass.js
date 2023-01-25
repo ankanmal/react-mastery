@@ -3,14 +3,19 @@ import React from "react";
 class Profile extends React.Component {
   //to use state varible we call constructor
   constructor(props) {
+    console.log("constructor called");
     super(props);
     this.state = {
       count: 0,
       count2: 0,
     };
   }
+  componentDidMount() {
+    console.log("Component Did MOunt");
+  }
 
   render() {
+    console.log("rendered");
     return (
       <div>
         <h1>Hello from Class Comp</h1>
