@@ -5,6 +5,7 @@ class Profile extends React.Component {
     return (
       <div>
         <h1>Hello from Class Comp</h1>
+        <h3>Name:{this.props.name}</h3>
       </div>
     );
   }

@@ -7,8 +7,8 @@ const About = () => {
     <div>
       <h1>About Us</h1>
       <h2>Wlecome to the Food kingdom Website</h2>
-      <ProfileFunc />
-      <ProfileClass />
+      <ProfileFunc name="Ankan Func" />
+      <ProfileClass name="Ankan class" />
     </div>
   );
 };
