@@ -16,10 +16,12 @@ class Profile extends React.Component {
         <h1>Hello from Class Comp</h1>
         <h3>Name:{this.props.name}</h3>
         <h3>Count:{this.state.count}</h3>
+        <h3>Count2:{this.state.count2}</h3>
         <button
           onClick={() => {
             this.setState({
               count: 1,
+              count2: 2,
             });
           }}
         >
