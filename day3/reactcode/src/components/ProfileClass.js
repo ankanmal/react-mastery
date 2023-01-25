@@ -7,12 +7,26 @@ class Profile extends React.Component {
     console.log("constructor called " + this.props.name);
 
     this.state = {
-      count: 0,
-      count2: 0,
+      userInfo: {
+        name: "Dummy",
+      },
     };
   }
-  componentDidMount() {
+  async componentDidMount() {
     console.log("Component Did MOunt " + this.props.name);
+    const data = await fetch("https://api.github.com/users/ankanmal");
+    const json = await data.json();
+    this.setState({
+      userInfo: json,
+    });
+    console.log(json);
+    console.log("Component Finished API Call");
+  }
+  componentDidUpdate() {
+    console.log("component DID update");
+  }
+  componentWillUnmount() {
+    console.log("Component Will Unmount Called");
   }
 
   render() {
@@ -20,19 +34,9 @@ class Profile extends React.Component {
     return (
       <div>
         <h1>Hello from Class Comp</h1>
-        <h3>Name:{this.props.name}</h3>
-        <h3>Count:{this.state.count}</h3>
-        <h3>Count2:{this.state.count2}</h3>
-        <button
-          onClick={() => {
-            this.setState({
-              count: 1,
-              count2: 2,
-            });
-          }}
-        >
-          Set Count
-        </button>
+        <img src={this.state.userInfo?.avatar_url} alt="" />
+        <h3>Name:{this.state.userInfo?.name}</h3>
+        <h3>Count:{this.state.userInfo?.location}</h3>
       </div>
     );
   }

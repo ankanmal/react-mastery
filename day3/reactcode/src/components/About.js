@@ -20,7 +20,6 @@ class About extends Component {
         <h1>About Us</h1>
         <h2>Wlecome to the Food kingdom Website</h2>
         <ProfileClass name="First class" />
-        <ProfileClass name="Second class" />
       </div>
     );
   }
