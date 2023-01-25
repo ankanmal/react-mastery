@@ -12,21 +12,19 @@ class Profile extends React.Component {
       },
     };
   }
-  async componentDidMount() {
+  componentDidMount() {
+    //here we are calling a set interval and it is not getting stopped after changing the page. To do that we have to remove the setInterval when we leave this page from componentwillunmount
     console.log("Component Did MOunt " + this.props.name);
-    const data = await fetch("https://api.github.com/users/ankanmal");
-    const json = await data.json();
-    this.setState({
-      userInfo: json,
-    });
-    console.log(json);
-    console.log("Component Finished API Call");
+    this.timer = setInterval(() => {
+      console.log("React Op");
+    }, 1000);
   }
   componentDidUpdate() {
     console.log("component DID update");
   }
   componentWillUnmount() {
     console.log("Component Will Unmount Called");
+    clearInterval(this.timer);
   }
 
   render() {
@@ -34,9 +32,6 @@ class Profile extends React.Component {
     return (
       <div>
         <h1>Hello from Class Comp</h1>
-        <img src={this.state.userInfo?.avatar_url} alt="" />
-        <h3>Name:{this.state.userInfo?.name}</h3>
-        <h3>Count:{this.state.userInfo?.location}</h3>
       </div>
     );
   }
