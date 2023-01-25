@@ -1,22 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Profile = (props) => {
   const [count, setCount] = useState(0);
-  const [count2, setCount2] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log("React OP from useEffect");
+    }, 1000);
+    //used the return below to clear setInterval
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   return (
     <div>
       <h2>Profile Component</h2>
-      <h3>Name:{props.name} </h3>
-      <h3>Count:{count}</h3>
-      <h3>Count2:{count2}</h3>
-      <button
-        onClick={() => {
-          setCount(1);
-          setCount2(2);
-        }}
-      >
-        Count
-      </button>
     </div>
   );
 };
