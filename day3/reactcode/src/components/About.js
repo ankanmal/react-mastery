@@ -9,6 +9,7 @@ class About extends Component {
     super(props);
   }
   componentDidMount() {
+    //Best Place for Api Call
     console.log("Parent Did Mount");
   }
 
