@@ -1,0 +1,78 @@
+.main-nav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(121, 9, 49, 0.9584967776172969) 21%,
+    rgba(0, 255, 179, 0.8828665255164566) 100%
+  );
+}
+body {
+  margin: 0px;
+}
+
+.logo {
+  height: 70px;
+  margin: 10px;
+  border-radius: 50px;
+}
+
+.ullist {
+  display: flex;
+}
+.ullist > li {
+  list-style-type: none;
+  padding: 20px;
+}
+.card-res {
+  width: 250px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 5px;
+}
+
+.res-img {
+  width: 100%;
+}
+
+.res-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shim {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.shimmer-photo {
+  background: #eef3f5;
+  width: 254px;
+  height: 160px;
+  margin-top: 50px;
+}
+
+.shimmer-heading {
+  background: #eef0f5;
+  height: 10px;
+  margin-top: 20px;
+  width: 134px;
+}
+.shimmer-price {
+  margin-top: 12px;
+  width: 94px;
+  background: #eef0f5;
+  height: 10px;
+}
+.loginBtn {
+  margin: 20px 0px 20px 0px;
+}
+.resMenu {
+  display: flex;
+}
