@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy } from "react";
 import ReactDOM from "react-dom/client";
 import "../App.css";
 import Navbar from "./components/Navbar";
@@ -10,7 +10,9 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
-import Instamart from "./components/Instamart";
+
+// Lazy Loading Components
+const Instamart = lazy(() => import("./components/Instamart"));
 
 const Foodkingdom = () => {
   return (
