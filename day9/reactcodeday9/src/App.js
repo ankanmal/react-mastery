@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "../App.css";
 import Navbar from "./components/Navbar";
@@ -54,7 +54,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/instamart",
-        element: <Instamart />,
+        element: (
+          <Suspense>
+            <Instamart />
+          </Suspense>
+        ),
       },
     ],
   },
