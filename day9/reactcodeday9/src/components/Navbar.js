@@ -1,9 +1,11 @@
 import { useState } from "react";
 import logo from "../../assets/logo1.jpg";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
 
 const Navbar = () => {
   const [isLogin, setIsLogin] = useState(false);
+  const isOnline = useOnline();
   return (
     <div className="main-nav">
       <img src={logo} alt="logo" className="logo" />
@@ -19,6 +21,7 @@ const Navbar = () => {
         </li>
         <li>Cart</li>
       </ul>
+      <span>{isOnline ? "🟢" : "🔴"}</span>
       {!isLogin ? (
         <button onClick={() => setIsLogin(true)} className="loginBtn">
           Log Out

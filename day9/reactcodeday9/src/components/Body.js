@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import Searchbar from "./Searchbar";
 import { Link } from "react-router-dom";
-import useOnline from "../utils/useOnline";
+//import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [findRestaurant, setfindRestaurant] = useState([]);
@@ -25,10 +25,10 @@ const Body = () => {
     setfindRestaurant(jsondata?.data?.cards[2]?.data?.data?.cards);
   }
 
-  const isOnline = useOnline();
-  if (!isOnline) {
-    return <h1>You Are Offline 🔴</h1>;
-  }
+  // const isOnline = useOnline();
+  // if (!isOnline) {
+  //   return <h1>You Are Offline 🔴</h1>;
+  // }
 
   return restaurantlist?.length === 0 ? (
     <ShimmerUi />
