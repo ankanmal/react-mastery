@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import Body from "./components/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
@@ -14,6 +13,7 @@ import Shimmer from "./components/ShimmerUi";
 
 // Lazy Loading Components
 const Instamart = lazy(() => import("./components/Instamart"));
+const About = lazy(() => import("./components/About"));
 
 const Foodkingdom = () => {
   return (
@@ -33,7 +33,12 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<h1>On Demand/lazy/Dynamic Loading About</h1>}>
+            {" "}
+            <About />
+          </Suspense>
+        ),
         children: [
           {
             path: "profile",
