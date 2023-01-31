@@ -20,6 +20,9 @@ const Navbar = () => {
           <Link to="/contact"> Contact Us</Link>
         </li>
         <li>Cart</li>
+        <li>
+          <Link to="/instamart"> Instamart</Link>
+        </li>
       </ul>
       <span>{isOnline ? "🟢" : "🔴"}</span>
       {!isLogin ? (
