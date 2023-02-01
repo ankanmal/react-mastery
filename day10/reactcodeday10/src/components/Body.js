@@ -41,7 +41,7 @@ const Body = () => {
       {findRestaurant.length === 0 ? (
         <h1>No restaurant found </h1>
       ) : (
-        <div className="res-body">
+        <div className="flex flex-wrap">
           {findRestaurant.map((restaurant) => {
             return (
               <Link
