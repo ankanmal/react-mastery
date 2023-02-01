@@ -1,0 +1,5 @@
+# include the files that we dont want to add to the git repo
+
+node_modules/
+dist/
+.parcel-cache/
