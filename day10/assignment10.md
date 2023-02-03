@@ -39,3 +39,7 @@ npx tailwindcss init
 ```
 
 So these are the steps require to configure our tailwind css into our app.
+
+### Why do we have .postcssrc file?
+
+The 'postcssrc' is a configuration file for the postcss tool which the tailwind uses to convert the tailwind class css into normal css using javascript. Thats why we have to configure the postcssrc file to work with in sync with the tailwindcss.
