@@ -1,7 +1,7 @@
-import { Outlet } from "react-router-dom";
 import ProfileClass from "./ProfileClass";
-import ProfileFunc from "./Profile";
+
 import { Component } from "react";
+import UserContext from "../utils/UserContext";
 
 class About extends Component {
   constructor(props) {
@@ -19,6 +19,16 @@ class About extends Component {
       <div>
         <h1>About Us</h1>
         <h2>Wlecome to the Food kingdom Website</h2>
+        <UserContext.Consumer>
+          {({ user }) => (
+            <h1
+              className="text-2xl
+          p-2 m-2 font-bold"
+            >
+              {user.name}-{user.email}
+            </h1>
+          )}
+        </UserContext.Consumer>
         <ProfileClass name="First class" />
       </div>
     );
