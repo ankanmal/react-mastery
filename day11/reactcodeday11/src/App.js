@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "../App.css";
 import Navbar from "./components/Navbar";
@@ -10,18 +10,27 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/ShimmerUi";
+import UserContext from "./utils/UserContext";
 
 // Lazy Loading Components
 const Instamart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About"));
 
 const Foodkingdom = () => {
+  const [user, setUser] = useState({
+    name: "Ankan",
+    email: "Ankan@gmail.com",
+  });
   return (
-    <>
+    <UserContext.Provider
+      value={{
+        user: user,
+      }}
+    >
       <Navbar />
       <Outlet />
       <Footer />
-    </>
+    </UserContext.Provider>
   );
 };
 
