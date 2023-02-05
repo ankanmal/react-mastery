@@ -1,4 +1,16 @@
 //Named Export
+
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
+
 export const Footer = () => {
-  return <h4>Footer</h4>;
+  const { user } = useContext(UserContext);
+
+  return (
+    <div className="flex justify-center">
+      <h4>
+        Made With ♥ by {user.name}----{user.email}
+      </h4>
+    </div>
+  );
 };
