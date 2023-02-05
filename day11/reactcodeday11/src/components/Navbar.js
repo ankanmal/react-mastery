@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import logo from "../../assets/logo1.jpg";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 const Navbar = () => {
   const [isLogin, setIsLogin] = useState(false);
   const isOnline = useOnline();
+  const { user } = useContext(UserContext);
   return (
     <div className="flex justify-between mb-2 bg-[rgb(2,0,36)] bg-gradient-to-r from-violet-500 to-fuchsia-500 shadow-lg">
       <img
@@ -29,6 +31,7 @@ const Navbar = () => {
         </li>
       </ul>
       <span className="self-center">{isOnline ? "🟢" : "🔴"}</span>
+      <span className="text-blue-600 self-center">{user.name}</span>
       {!isLogin ? (
         <button onClick={() => setIsLogin(true)} className="mx-5">
           Log Out
