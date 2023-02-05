@@ -10,7 +10,7 @@ const RestaurantCard = ({
   //object destructuring of the res array data into its individual values
   // const { name, cloudinaryImageId, cuisines, lastMileTravelString } = res;
   return (
-    <div className="w-56 m-3">
+    <div className="w-56 m-3 p-2 border border-red-500 ">
       <img
         src={IMG_URL + cloudinaryImageId}
         alt="restaurantlogo"

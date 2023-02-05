@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { searchRestaurant } from "../utils/helper";
+import UserContext from "../utils/UserContext";
 
 const Searchbar = (props) => {
   const [searchBar, setsearchBar] = useState("");
@@ -8,6 +9,7 @@ const Searchbar = (props) => {
   const updateSearchbar = (set) => {
     setsearchBar(set);
   };
+  const { user, setUser } = useContext(UserContext);
 
   return (
     <div className=" bg-gradient-to-r from-violet-500 to-fuchsia-500 py-3 flex justify-center">
@@ -29,6 +31,29 @@ const Searchbar = (props) => {
       >
         Search
       </button>
+      <input
+        type="text"
+        value={user.name}
+        className="m-2"
+        onChange={(e) =>
+          setUser({
+            email: user.email,
+            name: e.target.value,
+          })
+        }
+      />
+      <input
+        type="text"
+        value={user.email}
+        className="m-2"
+        onChange={(e) =>
+          setUser({
+            //spreading the user key and values to the setUser
+            ...user,
+            email: e.target.value,
+          })
+        }
+      />
     </div>
   );
 };

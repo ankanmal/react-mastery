@@ -25,6 +25,7 @@ const Foodkingdom = () => {
     <UserContext.Provider
       value={{
         user: user,
+        setUser: setUser,
       }}
     >
       <Navbar />
