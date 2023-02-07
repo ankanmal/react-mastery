@@ -1,3 +1,14 @@
+### Explore all the ways of writing css.
+
+There are various ways of writng CSS
+
+- inline style
+- using extended style sheet creating a .css file
+- SCSS
+- Component Library : MaterialUI, Chakra UI, Ant UI, Base UI
+- Styled Components
+- Frameworks : TailwindCSS
+
 ### How do we Configure Tailwind?
 
 To configure tailwind first we have to read the docs of tailwind css there it has provided various ways for various frontend library and framework. In our case we are using Parcel as a bundler under which react is there so to configure tailwind we follow the steps below:
