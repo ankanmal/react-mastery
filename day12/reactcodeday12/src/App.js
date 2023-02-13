@@ -11,6 +11,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/ShimmerUi";
 import UserContext from "./utils/UserContext";
+import Cart from "./components/Cart";
 
 // Lazy Loading Components
 const Instamart = lazy(() => import("./components/Instamart"));
@@ -75,6 +76,10 @@ const appRouter = createBrowserRouter([
             <Instamart />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

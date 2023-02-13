@@ -25,7 +25,9 @@ const Navbar = () => {
         <li className="p-2 m-2">
           <Link to="/contact"> Contact Us</Link>
         </li>
-        <li className="p-2 m-2">Cart</li>
+        <li className="p-2 m-2">
+          <Link to="/cart"> Cart</Link>
+        </li>
         <li className="p-2 m-2">
           <Link to="/instamart"> Instamart</Link>
         </li>
