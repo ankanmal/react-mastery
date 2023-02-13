@@ -3,11 +3,13 @@ import logo from "../../assets/logo1.jpg";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [isLogin, setIsLogin] = useState(false);
   const isOnline = useOnline();
   const { user } = useContext(UserContext);
+  const cartQty = useSelector((state) => state.cart.length);
   return (
     <div className="flex justify-between mb-2 bg-[rgb(2,0,36)] bg-gradient-to-r from-violet-500 to-fuchsia-500 shadow-lg">
       <img
@@ -26,7 +28,7 @@ const Navbar = () => {
           <Link to="/contact"> Contact Us</Link>
         </li>
         <li className="p-2 m-2">
-          <Link to="/cart"> Cart</Link>
+          <Link to="/cart"> Cart-{cartQty}</Link>
         </li>
         <li className="p-2 m-2">
           <Link to="/instamart"> Instamart</Link>
